@@ -1,0 +1,26 @@
+h1, p {
+    float: center;
+    text-align: center;
+}
+
+.header {
+    width: 100%;
+    margin: auto;
+    float: center;
+}
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  text-align: center;  
+}
+
+.grid-item {
+    width: 30%;
+    margin: 5px;
+    float: center;
+    vertical-align: middle;
+    align-content: center;
+
+}
