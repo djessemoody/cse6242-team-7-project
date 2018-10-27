@@ -1,0 +1,151 @@
+Flipper:
+
+	Data set: 
+		BuyerSellerIndex_Zip_Cleaned
+	Interested columns:
+		Zip, DaysOnMarket, BuyerSellerIndex
+
+	Scoring:
+		Very Important:
+			DaysOnMarket: 
+				We should bin this and put a strong preference on homes that can sell fast
+
+		Important:
+
+		Minorly Important:
+			BuyerSellerIndex:
+				A flipper might want to shop in a buyers market but then they will likely also end up selling in a buyers market so this shouldn't carry much weight in the scoring algorithm. 
+
+
+	Dataset: 
+		MarketHealthIndex_Zip_Cleaned
+	Interested Columns:
+		Zip, MarketHealthIndex, (and maybe ZHVI?)
+
+	Scoring:
+		Very Important:
+			MarketHealthIndex:
+				A flipper will only want to invest in a healthy market
+
+	Filtering:
+		ZHVI:
+			Allow the user to filter based on ZHVI
+
+
+	Dataset:
+		Zip_PctOfHomesIncreasingInValues_AllHomes_Cleaned and Zip_PctOfHomesDecreasingInValues_AllHomes_Cleaned
+	Interested Columns:
+		The past few years (a flipper might be interested in seeing how many homes increased/decreased over the past few years)
+
+	Scoring:
+		This wouldn't be used for scoring (market health would be a better metric) but this could be displayed for the "winning" zipcodes 
+
+
+	Dataset: 
+		Sale_Prices_Zip_Cleaned
+	Interest Columns:
+		The past year
+
+	Scoring:
+		This dataset wouldn't be used in scoring but could be used for filtering
+
+	Filtering:
+		The average median sale price over the past year
+
+
+	Dataset:
+		Zip_MedianValuePerSqft_AllHomes_Cleaned
+	Interested Columns:
+		The average of the median value per square foot for the past few years
+
+	Scoring:
+		Minorly Important:
+			Median value per square foot:
+				A flipper might want to flip in cheaper areas? But they also might want to focus on higher end places... We might want to filter on this one
+
+
+
+-----------------------------------------------------------------------------
+
+Landloard:
+
+	Data set: 
+		BuyerSellerIndex_Zip_Cleaned
+	Interested columns:
+		Zip, PctPriceCut, DaysOnMarket, BuyerSellerIndex
+
+	Scoring:
+		Very Important:
+			BuyerSellerIndex: 
+				We should filter the data to only show zip codes that are a buyers market (landlord will want a market that has a higher BuyerSellerIndex)
+
+		Important:
+
+		Minorly Important:
+			DaysOnMarket:
+				A landlord might want to consider slow moving zips because they could use the time a house has been sitting idle as a reason to lowball their offer
+
+			PctPriceCut:
+				A landlord might want to look at houses that have been having price cuts (so they can get them cheaper)
+				Unsure if this should be in the "Important" category instead
+
+	Dataset: 
+		MarketHealthIndex_Zip_Cleaned
+	Interested Columns:
+		Zip, MarketHealthIndex, (and maybe ZHVI?)
+
+	Scoring:
+		Very Important:
+			MarketHealthIndex:
+				A landlord will only want to invest in a healthy market
+
+	Filtering:
+		ZHVI:
+			Allow the user to filter based on ZHVI
+
+
+	Dataset: 
+		Sale_Prices_Zip_Cleaned
+	Interested Columns:
+		The past year
+
+	Scoring:
+		This dataset wouldn't be used in scoring but could be used for filtering
+
+	Filtering:
+		The average median sale price over the past year
+
+
+	Dataset:
+		Zip_PriceToRentRatio_AllHomes_Cleaned
+	Interested Columns:
+		The past few years and we could do a time series forecast
+
+	Scoring:
+		Very Important:
+			The average over the past few years should be low.
+
+
+	Dataset:
+		Zip_Zri_SingleFamilyResidenceRental_Cleaned
+	Interested Columns:
+		ZRI
+
+	Scoring:
+		Important:
+			ZRI:
+				A landlord would want to know how much rent they could expect to collect. This isn't in the "Very Important" category because it doesn't take the mortgage into account. We might want to forecast future rent.
+
+	Filtering:
+		A landlord might want to filter to locations where they could collect at least $xxx rent
+
+
+	Dataset:
+		Zip_MedianValuePerSqft_AllHomes_Cleaned
+	Interested Columns:
+		The average of the median value per square foot for the past few years
+
+	Scoring:
+		Minorly Important:
+			Median value per square foot:
+				A landlord might want to purchase in cheaper areas? We might want to filter on this one
