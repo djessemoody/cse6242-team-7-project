@@ -1,4 +1,4 @@
-h1, p {
+h1, h3, p, div {
     float: center;
     text-align: center;
 }
@@ -18,9 +18,14 @@ h1, p {
 
 .grid-item {
     width: 30%;
-    margin: 5px;
+    margin: 10px;
     float: center;
     vertical-align: middle;
     align-content: center;
 
+}
+
+iframe, div {
+    display: block;
+    margin: auto;
 }
