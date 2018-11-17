@@ -1,35 +1,31 @@
-window.onload=function() {
-    var vizDiv = document.getElementById('viz');
-    var vizURL = "https://public.tableau.com/views/poc_7/results?:embed=y&:display_count=yes&publish=yes";
+function resultsLandlord() {
+    if (typeof resultsViz !== 'undefined') {
+        resultsViz.getWorkbook().revertAllAsync();
+        resultsViz.dispose()
+    }
+    var vizDiv = document.getElementById('results-viz');
+    var vizURL = "https://public.tableau.com/views/landlord/Landlord?:embed=y&:display_count=no&publish=yes";
     var options = {
-    hideToolbar: true
+        hideTabs: true,
+        hideToolbar: false,
+        "Persona": "Landlord"
     };
-    viz = new tableauSoftware.Viz(vizDiv, vizURL, options);
+
+    window.resultsViz = new tableauSoftware.Viz(vizDiv, vizURL, options);
+}
+
+function resultsFlipper() {
+    if (typeof resultsViz !== 'undefined') {
+        resultsViz.getWorkbook().revertAllAsync();
+        resultsViz.dispose()
+    }
+    var vizDiv = document.getElementById('results-viz');
+    var vizURL = "https://public.tableau.com/views/flipper/Flipper?:embed=y&:display_count=no&publish=yes";
+    var options = {
+        hideTabs: true,
+        hideToolbar: false,
+        "Persona": "Flipper"
     };
 
-function resetToLandlord() { 
-    workbook = viz.getWorkbook();
-    workbook.changeParameterValueAsync('Persona',  'Landlord');
-    workbook.changeParameterValueAsync('Home Sale Multiplier', '0.8');
-    workbook.changeParameterValueAsync('Population Multiplier',  '0.8');
-    workbook.changeParameterValueAsync('Wage Multiplier', '0.8');
-    viz.refreshDataAsync();
-};
-
-function resetToFlipper() { 
-    workbook = viz.getWorkbook();
-    workbook.changeParameterValueAsync('Persona',  'Flipper');
-    workbook.changeParameterValueAsync('Home Sale Multiplier', '0.65');
-    workbook.changeParameterValueAsync('Population Multiplier',  '0.65');
-    workbook.changeParameterValueAsync('Wage Multiplier', '0.65');
-    viz.refreshDataAsync();
-};
-
-function resetToCustom() { 
-    workbook = viz.getWorkbook();
-    workbook.changeParameterValueAsync('Persona',  'Custom');
-    workbook.changeParameterValueAsync('Home Sale Multiplier', '0.35');
-    workbook.changeParameterValueAsync('Population Multiplier',  '0.35');
-    workbook.changeParameterValueAsync('Wage Multiplier', '0.35');
-    viz.refreshDataAsync();
-};
+    window.resultsViz = new tableauSoftware.Viz(vizDiv, vizURL, options);
+}

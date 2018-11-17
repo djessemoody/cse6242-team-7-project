@@ -4,30 +4,32 @@
 	<head>
 		<meta charset="utf-8">
         <title>Should We Invest</title>
-        <script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/tableau_v8.debug.js"></script>
+        <script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/tableau_v8.js"></script>
         <link rel="stylesheet" href="styles.css">
 	</head>
 	<body>
         <div class="header">
-            <h1> Should We Invest</h1>
-            <p><i>Should We Invest provides tailored recommendations on which real estate market to invest in based upon your investment profile..... lorem ipsum yaddee yada yada</i></p>
+            <h1>Should We Invest</h1>
+            <p><i>Should We Invest provides tailored recommendations on which real estate market to invest in based upon your investment profile</i></p>
         </div>        
         <br>
-        <div class="grid">
-            <div class="grid-item">
-                <button id="landlord-persona" onclick="resetToLandlord();">Landlord</button><br>
-                <span>Landlord profile should set persona to landlord and each multiplier to .80</span>
-            </div>
-            <div class="grid-item">
-                <button id="flipper-persona" onclick="resetToFlipper();">Flipper</button><br>
-                <span>Flipper profile should set persona to flipper and each multiplier to 0.65</span>
-            </div>
-            <div class="grid-item">
-                <button id="custom-persona" onclick="resetToCustom();">Custom</button><br>
-                <span>Custom profile should set persona to custom and each multiplier to 0.35</span>
+        <hr>
+        <br>
+        <div class="persona">
+            <h3>Select a persona below</h3>
+            <div class="grid">
+                <div class="grid-item">
+                    <button id="landlord-persona" onclick="resultsLandlord();">Landlord</button><br>
+                    <span>Provides results tailored to an investor looking to manage property as a lessor</span>
+                </div>
+                <div class="grid-item">
+                    <button id="flipper-persona" onclick="resultsFlipper();">Flipper</button><br>
+                    <span>Provides results tailored to an investor interested in reselling property</span>
+                </div>
             </div>
         </div>
-        <div id="viz">
+        <div class="results">
+            <div id="results-viz"></div>
         </div>
         </body>
 	<script type="text/javascript" src="app.js"></script>
