@@ -1,0 +1,122 @@
+h1, h3, p, div {
+    float: center;
+    text-align: center;
+}
+
+h1 {
+  color: #edc948;
+  font-size: 48px;
+  font-family: 'Lobster Two', cursive;
+}
+
+h3 {
+  font-size: 24px;
+}
+.header {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: auto;
+    float: center;
+    background-color: #080E27;
+    position: relative;
+    top: -20px;
+    color: #e6e6e6;
+    font-size: 20px;
+}
+
+.persona {
+  padding-bottom: 30px;
+  background-color: #080E27;
+  position: relative;
+  top: -40px;
+  border-top: 2px solid #edc948;
+  color: #e6e6e6;
+}
+
+button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+/* Custom */
+button {
+  display: inline-block;
+  position: relative;
+  padding: 10px 15px;
+  top: 0;
+  font-size: 24px;
+  font-family: 'Lobster Two', cursive;
+  border-radius: 4px;
+  background-image: radial-gradient(#AD9335, #edc948);
+  color: #e6e6e6;
+  /*box-shadow: 0px 0px 0px rgba( 15, 165, 60, 0.1 );*/
+
+  -webkit-transform: translateZ(0);
+     -moz-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+          transform: translateZ(0);
+
+  -webkit-transition: all 0.2s ease;
+     -moz-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+}
+
+button:hover {
+  top: -10px;
+  box-shadow: 0px 10px 10px rgba(93, 79, 40, .1);
+
+  -webkit-transform: rotateX(20deg);
+     -moz-transform: rotateX(20deg);
+      -ms-transform: rotateX(20deg);
+          transform: rotateX(20deg);
+}
+
+button:active {
+  top: 0px;
+  box-shadow: 0px 0px 0px rgba(93, 79, 40, .1);
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  text-align: center;
+  background-color: #080E27;
+  color: #e6e6e6;
+}
+
+.grid-item {
+    width: 30%;
+    margin: 10px;
+    float: center;
+    vertical-align: middle;
+    align-content: center;
+
+}
+
+.results {
+  position: relative;
+  top: -40px;
+  background-color: #353535
+}
+
+iframe, div {
+    display: block;
+    margin: auto;
+}
+
+html, body {
+  margin:0;
+  padding:0;
+  background-color:#353535;
+
+body {
+  background-color: #353535;
+}
