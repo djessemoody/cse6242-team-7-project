@@ -6,4 +6,4 @@ INSTALLATION - How to install and setup your code.
 
 
 
-EXECUTION - go to www.shouldweinvest.com (or your deploment).
+EXECUTION - go to www.shouldweinvest.com (or your deployment).
