@@ -30,7 +30,7 @@ with open('schools_by_zip.csv', 'w') as csvfile:
     writer = csv.writer(csvfile, delimiter=',')
     for zipState in zipList:
         try:
-            request = requests.get('https://api.greatschools.org/search/schools?key=028256bebab46146e09b3a9ff0bb642d&state=%s&q=%s' % (zipState.state,zipState.zip))
+            request = requests.get('https://api.greatschools.org/search/schools?key=<API KEY>&state=%s&q=%s' % (zipState.state,zipState.zip))
             root = ElementTree.fromstring(request.content)
             for school in root:
                 print(school[1].text)
