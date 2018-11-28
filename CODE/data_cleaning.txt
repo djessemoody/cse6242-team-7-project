@@ -1,4 +1,4 @@
-For data cleaning, we followed the steps below.
+For data cleaning, we followed the steps below in OpenRefine and Dataiku.
 
 Great Schools Data:
 Data was aggregated to the zip code level and each zip code contains the average school rating for all schools in the zip code.
