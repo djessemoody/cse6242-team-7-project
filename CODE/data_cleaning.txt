@@ -1,0 +1,20 @@
+For data cleaning, we followed the steps below.
+
+Great Schools Data:
+Data was aggregated to the zip code level and each zip code contains the average school rating for all schools in the zip code.
+
+Experian Data:
+Data was filtered so that only the relevant columns remained. We also renamed columns for better readability and understandability.
+
+Zillow Data:
+We identified the important columns present in each dataset and removed the other (unimportant) columns. After this, we removed any zip code that had missing values for the important columns.
+The 10 cleaned datasets were then merged together with SQL. We used an inner join to ensure that our final dataset only included zip codes we had complete information for.
+After the Zillow data was joined, we did an inner join with the Great Schools data and then another inner join with the Experian data.
+
+
+
+
+For scoring our metrics:
+
+Each variable that we used in our recommendation algorithm was scaled from 0 to 1. For all variables except for the age of the house, 0 represents the lowest value and 1 represents the highest.
+For the average age of the home variable, we assigned a 1 to older homes built after 1978 (to avoid lead paint and asbestos) and scaled down to 0 as homes either became newer or older than 1978.
